@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz Uygulaması</title>
+</head>
+<body>
+    <h1>Quiz</h1>
+    <form method="POST">
+        {% for question in questions %}
+            <div>
+                <p>{{ question.question }}</p>
+                {% for option in question.options %}
+                    <input type="radio" name="question_{{ loop.index0 }}" value="{{ option }}"> {{ option }}<br>
+                {% endfor %}
+            </div>
+        {% endfor %}
+        <button type="submit">Gönder</button>
+    </form>
+
+    {% if score is not none %}
+        <h2>Doğru Sayınız: {{ score }} / {{ total_questions }}</h2>
+        <h2>Puanınız: {{ percentage_score }} / 100</h2>
+    {% endif %}
+</body>
+</html>
