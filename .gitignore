@@ -1,0 +1,9 @@
+# Python tarafından oluşturulan bytecode dosyaları
+__pycache__/
+
+
+# Flask uygulamaları için instance dosyaları
+instance/
+
+# Windows sistem dosyaları
+desktop.ini
